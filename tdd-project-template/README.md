@@ -1,1 +1,1 @@
-Add description of the project template
+Add description of the project template.
