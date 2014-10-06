@@ -6,6 +6,8 @@ import android.location.Address;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +31,7 @@ import java.util.Date;
 import java.util.Locale;
 
 
-public class MainActivity extends Activity implements LocationTask.LocationListener, WeatherServiceReceiver.WeatherServiceListener {
+public class MainActivity extends Activity implements LocationTask.LocationListener, WeatherServiceReceiver.WeatherServiceListener, View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a", Locale.getDefault());
@@ -44,6 +46,8 @@ public class MainActivity extends Activity implements LocationTask.LocationListe
     private TextView pressureTV;
     private TextView sunriseTV;
     private TextView sunsetTV;
+
+    private Button refreshButton;
 
 
     @Override
@@ -62,10 +66,14 @@ public class MainActivity extends Activity implements LocationTask.LocationListe
         sunriseTV = (TextView) findViewById(R.id.sunrise_tv);
         sunsetTV = (TextView) findViewById(R.id.sunset_tv);
 
-        Location location = LocationUtil.getLocation(this);
+        refreshButton = (Button) findViewById(R.id.refresh_button);
+        refreshButton.setOnClickListener(this);
+    }
 
-        LocationTask locationTask = new LocationTask(getApplicationContext(), this);
-        locationTask.execute(location);
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initialiseDataFetch();
     }
 
     private Intent weatherDataIntent(String city, String countryCode) {
@@ -118,6 +126,20 @@ public class MainActivity extends Activity implements LocationTask.LocationListe
                 break;
             default:
                 break;
+        }
+    }
+
+    private void initialiseDataFetch() {
+        Location location = LocationUtil.getLocation(this);
+        LocationTask locationTask = new LocationTask(getApplicationContext(), this);
+        locationTask.execute(location);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.equals(refreshButton)) {
+            Toast.makeText(this, "Refreshing data...", Toast.LENGTH_LONG).show();
+            initialiseDataFetch();
         }
     }
 }
