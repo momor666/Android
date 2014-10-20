@@ -102,9 +102,12 @@ public class MainActivity extends Activity implements LocationTask.LocationListe
     public void onReceiveResult(int resultCode, Bundle resultData) {
         switch (resultCode) {
             case 0:
-                Toast.makeText(this, "Unable to fetch weather data, please check your network connection.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Weather data request failed.", Toast.LENGTH_LONG).show();
                 break;
             case 1:
+                Toast.makeText(this, "Network error, please try again later.", Toast.LENGTH_LONG).show();
+                break;
+            case 2:
                 final WeatherModel model = (WeatherModel) resultData.get("weatherModel");
                 final Weather weather = model.getWeather().get(0);
 

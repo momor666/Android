@@ -3,11 +3,13 @@ package com.sbhachu.weatherapplication.data.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Created by sbhachu on 20/10/2014.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherMain implements Parcelable {
 
     @JsonProperty("temp")

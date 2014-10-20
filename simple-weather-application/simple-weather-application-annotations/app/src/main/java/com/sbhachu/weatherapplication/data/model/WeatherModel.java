@@ -3,6 +3,7 @@ package com.sbhachu.weatherapplication.data.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by sbhachu on 16/03/2014.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherModel implements Parcelable {
 
     @JsonProperty("coord")

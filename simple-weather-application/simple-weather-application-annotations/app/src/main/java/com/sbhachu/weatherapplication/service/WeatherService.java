@@ -22,8 +22,6 @@ public class WeatherService extends IntentService {
 
     private static final String TAG = WeatherService.class.getSimpleName();
 
-    private static final String OPEN_WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?q=%s,%s&units=metric";
-
     @Bean
     protected NetworkStateUtil networkStateUtil;
 
@@ -44,10 +42,12 @@ public class WeatherService extends IntentService {
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("weatherModel", model);
 
-                resultReceiver.send(1, bundle);
+                resultReceiver.send(2, bundle);
+            } else {
+                resultReceiver.send(0, null);
             }
         } else {
-            resultReceiver.send(0, null);
+            resultReceiver.send(1, null);
         }
     }
 
