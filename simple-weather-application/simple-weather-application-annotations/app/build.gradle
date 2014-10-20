@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0"
+
+    defaultConfig {
+        applicationId "com.sbhachu.weatherapplication"
+        minSdkVersion 15
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+apt {
+    arguments {
+        androidManifestFile variant.processResources.manifestFile
+        resourcePackageName "com.sbhachu.weatherapplication"
+    }
+}
+
+dependencies {
+    apt "org.androidannotations:androidannotations:3.0+"
+    compile "org.androidannotations:androidannotations-api:3.0+"
+    compile 'org.springframework.android:spring-android-rest-template:2.0.+'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.4.+'
+    compile 'com.squareup.picasso:picasso:2.3.4'
+    compile 'org.apache.commons:commons-lang3:3.1'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
