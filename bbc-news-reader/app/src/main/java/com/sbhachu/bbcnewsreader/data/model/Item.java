@@ -15,7 +15,7 @@ import java.util.List;
  * Created by sbhachu on 28/10/2014.
  */
 @NamespaceList({
-    @Namespace(reference = "http://search.yahoo.com/mrss/", prefix = "media"),
+    @Namespace(reference = "http://search.yahoo.com/mrss/", prefix = "media")
 })
 public class Item implements Parcelable {
 
@@ -34,7 +34,7 @@ public class Item implements Parcelable {
     @Element(name = "pubDate")
     private String pubDate;
 
-    @ElementList(name = "thumbnail", required = true, inline = true)
+    @ElementList(name = "thumbnail", required = false, inline = true)
     private List<Thumbnail> thumbnails;
 
     public Item() {}

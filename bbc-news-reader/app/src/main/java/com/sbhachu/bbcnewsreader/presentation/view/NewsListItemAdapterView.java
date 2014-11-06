@@ -32,8 +32,14 @@ public class NewsListItemAdapterView extends RelativeLayout {
     }
 
     public void bind(Item item) {
-        Thumbnail thumbnail = item.getThumbnails().get(1);
-        Picasso.with(getContext()).load(thumbnail.getUrl()).resize(250,250).centerCrop().into(imageView);
+
+        if (item.getThumbnails() != null && item.getThumbnails().size() > 1) {
+
+            Thumbnail thumbnail = item.getThumbnails().get(1);
+            Picasso.with(getContext()).load(thumbnail.getUrl()).resize(250, 250).centerCrop().into(imageView);
+
+            // if thumbnail is null, we could show a placeholder image (append .placeholder(image_resource_id) to above line).
+        }
 
         titleTextView.setText(item.getTitle());
         descriptionTextView.setText(item.getDescription());

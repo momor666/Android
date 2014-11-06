@@ -12,7 +12,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.sbhachu.bbcnewsreader.R;
@@ -26,10 +25,12 @@ import com.sbhachu.bbcnewsreader.util.Logger;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.res.StringArrayRes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @EActivity(R.layout.activity_main)
@@ -55,7 +56,7 @@ public class MainActivity extends FragmentActivity implements NewsListFragment.I
 
     private CharSequence title;
     private CharSequence drawerTitle;
-
+    private List<String> navigationDrawerListItemNames;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,18 +65,16 @@ public class MainActivity extends FragmentActivity implements NewsListFragment.I
 
     @AfterViews
     protected void afterViews() {
-
         title = drawerTitle = getTitle();
 
         navigationDrawerItems = new ArrayList<String>();
+        navigationDrawerListItemNames = Arrays.asList(navigationMenuItemNames);
 
         if (navigationMenuItemNames.length > 0) {
             for (int i = 0; i < navigationMenuItemNames.length; i++) {
                 navigationDrawerItems.add(navigationMenuItemNames[i]);
             }
         }
-
-        drawerList.setOnItemClickListener(new NavigationDrawerItemClickListener());
 
         adapter.setNavigationDrawerItems(navigationDrawerItems);
         drawerList.setAdapter(adapter);
@@ -104,22 +103,18 @@ public class MainActivity extends FragmentActivity implements NewsListFragment.I
         displayView(0);
     }
 
-    private class NavigationDrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    @ItemClick(R.id.navigation_drawer)
+    public void onNavigationDrawerListItemClick(String item) {
+        final int position = navigationDrawerListItemNames.indexOf(item);
 
-            final int itemPosition = position;
+        drawerLayout.closeDrawer(drawerList);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                displayView(position);
+            }
+        }, 250);
 
-            drawerLayout.closeDrawer(drawerList);
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    displayView(itemPosition);
-                }
-            }, 250);
-
-
-        }
     }
 
     private void displayView(int position) {
