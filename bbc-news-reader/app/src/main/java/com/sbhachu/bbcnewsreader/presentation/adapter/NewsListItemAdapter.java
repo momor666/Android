@@ -68,9 +68,7 @@ public class NewsListItemAdapter extends BaseAdapter {
             adapterView = (NewsListItemAdapterView) convertView;
         }
 
-        Item item = items.get(position);
-
-        adapterView.bind(item);
+        adapterView.bind(items.get(position));
 
         return adapterView;
     }

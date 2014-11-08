@@ -63,11 +63,6 @@ public class NavigationDrawerListAdapter extends BaseAdapter {
             adapterView = (NavigationDrawerListItemAdapterView) convertView;
         }
 
-        if (convertView == null) {
-            LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflater.inflate(R.layout.navigation_drawer_list_item, null);
-        }
-
         adapterView.bind(navigationDrawerItems.get(position));
 
         return adapterView;
