@@ -25,8 +25,8 @@ The project is written for Lollipop and uses the new support v7 library for back
 
 <p><b>Screenshots:</b></p>
 <ol>
-<li><p><b>Login Form</b></p><br/><p><img src="/images/1.png"/></p></li><br/>
-<li><p><b>Registration Form</b></p><br/><p><img src="/images/2.png"/></p></li><br/>
-<li><p><b>User Authenticated</b></p><br/><p><img src="/images/3.png"/></p></li><br/>
-<li><p><b>Fetch Protected Resource</b></p><br/><p><img src="/images/4.png"/></p></li><br/>
+<li><p><b>Login Form</b></p><br/><p><img src="https://github.com/sbhachu/Android/blob/master/authentication/oauth2-authentication/images/1.png"/></p></li><br/>
+<li><p><b>Registration Form</b></p><br/><p><img src="https://github.com/sbhachu/Android/blob/master/authentication/oauth2-authentication/images/2.png"/></p></li><br/>
+<li><p><b>User Authenticated</b></p><br/><p><img src="https://github.com/sbhachu/Android/blob/master/authentication/oauth2-authentication/images/3.png"/></p></li><br/>
+<li><p><b>Fetch Protected Resource</b></p><br/><p><img src="https://github.com/sbhachu/Android/blob/master/authentication/oauth2-authentication/images/4.png"/></p></li><br/>
 </ol>
