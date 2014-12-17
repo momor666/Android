@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">oauth2-authentication</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_logout">Logout</string>
+    <string name="register">Create Account</string>
+    <string name="password_label">Password:</string>
+    <string name="email_label">Email Address:</string>
+    <string name="login">Login</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="logged_in">Authenticated as:</string>
+
+</resources>
