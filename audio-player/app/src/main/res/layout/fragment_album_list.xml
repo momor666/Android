@@ -1,0 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.sbhachu.audioplayer.presentation.fragment.AlbumListFragment">
+
+    <GridView
+        android:id="@+id/album_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:horizontalSpacing="0dp"
+        android:listSelector="@drawable/album_list_item_background_selector"
+        android:numColumns="2"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:verticalSpacing="0dp"/>
+
+    <ProgressBar
+        android:id="@+id/album_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/custom_progressbar_round"/>
+
+</FrameLayout>

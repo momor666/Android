@@ -1,0 +1,75 @@
+<LinearLayout
+    android:id="@+id/playlist_parallax_header"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.sbhachu.audioplayer.presentation.view.SquareImageView
+                android:id="@+id/playlist_large_art_iv_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:scaleType="fitCenter"/>
+
+            <Space
+                android:layout_width="2dp"
+                android:layout_height="match_parent"/>
+
+            <com.sbhachu.audioplayer.presentation.view.SquareImageView
+                android:id="@+id/playlist_large_art_iv_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.sbhachu.audioplayer.presentation.view.SquareImageView
+                android:id="@+id/playlist_large_art_iv_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:scaleType="fitCenter"/>
+
+            <Space
+                android:layout_width="2dp"
+                android:layout_height="match_parent"/>
+
+            <com.sbhachu.audioplayer.presentation.view.SquareImageView
+                android:id="@+id/playlist_large_art_iv_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:scaleType="fitCenter"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

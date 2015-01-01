@@ -1,0 +1,19 @@
+<FrameLayout
+    android:id="@+id/playlist_parallax_header"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp" android:background="@color/windowBackgroundVeryDark"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/genre_name_large_tv"
+        style="@style/AlbumInfoOverlayText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        android:textSize="32sp"
+        android:textStyle="bold"/>
+
+</FrameLayout>

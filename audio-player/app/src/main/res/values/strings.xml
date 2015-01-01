@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Audio Player</string>
+    <string name="action_search">Search</string>
+    <string name="action_add_playlist">Add Playlist</string>
+
+    <!-- About Fragment -->
+    <string name="about_fragment_name">About</string>
+
+    <!-- Album List Fragment -->
+    <string name="album_list_fragment_name">Albums</string>
+
+    <!-- Artist List Fragment -->
+    <string name="artist_list_fragment_name">Artists</string>
+
+    <!-- Audio Player Fragment -->
+    <string name="audio_player_fragment_name">Player</string>
+
+    <!-- Genre List Fragment -->
+    <string name="genre_list_fragment_name">Genres</string>
+
+    <!-- Playlist Editor Fragment -->
+    <string name="playlist_editor_fragment_name">Playlist Editor</string>
+
+    <!-- Playlist Fragment -->
+    <string name="playlist_fragment_name">Playlists</string>
+
+    <!-- Search Fragment -->
+    <string name="search_fragment_name">Search</string>
+
+    <!-- Track List Fragment -->
+    <string name="track_list_fragment">Songs</string>
+
+    <array name="navigation_drawer_items">
+        <item>Songs</item>
+        <item>Albums</item>
+        <item>Artists</item>
+        <item>Genres</item>
+        <item>Playlists</item>
+    </array>
+
+    <string name="settings_option">Settings</string>
+    <string name="about_option">About</string>
+</resources>
