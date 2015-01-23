@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="application_name">Fling Challenge</string>
-    <string name="offline_message">Device is offline, please check your network connection</string>
-
-</resources>
