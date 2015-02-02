@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.sbhachu.fanatixchallenge.presentation.fragment.FriendListFragment">
+
+    <com.sbhachu.fanatixchallenge.presentation.view.FriendListHeaderView_
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ListView
+        android:id="@+id/friends_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_view"
+        android:divider="@color/listDivider"
+        android:dividerHeight="1dp"
+        android:headerDividersEnabled="true"
+        android:listSelector="@drawable/list_item_background_selector"/>
+
+    <ProgressBar
+        android:id="@+id/friend_list_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>
