@@ -10,4 +10,4 @@ The project contains skeleton base classes (BaseActivity, BasePresenter, BaseRec
 <p><b>Known Issues:</b></p>
 The SimpleXML annotations don't play nicely with Kotlin data classes when implementing the Parcelable interface, this needs further investigation as it would be nice to have the entire project written with Kotlin code.  Thankfully because of the interoperability of Kotlin and Java classes, I've re-used the annotated POJOs from my previous project.
 
-
+This project doesn't use <a href="https://github.com/Kotlin/anko">Anko</a> yet, that was just too much under the hood wizardry for me to handle while learning Kotlin, but it's on my list :)
